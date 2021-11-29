@@ -35,9 +35,11 @@ int main()
     flagCarga = 0;
 
 
+    	printf("\n------------------------------------------------------------------------ \n");
+    	printf("\n Bienvenido al TP 3 de Laboratorio/Programacion Creado por Cristian Illi \n");
+    	printf("\n------------------------------------------------------------------------\n");
 
 
-    printf("%d",option);
     do{
     	option = MostrarMenu();
 
