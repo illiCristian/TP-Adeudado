@@ -35,11 +35,9 @@ int main()
     flagCarga = 0;
 
 
-    	printf("\n------------------------------------------------------------------------ \n");
-    	printf("\n Bienvenido al TP 3 de Laboratorio/Programacion Creado por Cristian Illi \n");
-    	printf("\n------------------------------------------------------------------------\n");
 
 
+    printf("%d",option);
     do{
     	option = MostrarMenu();
 
@@ -49,32 +47,32 @@ int main()
                 if(flagCarga== 0)
                 {
                 	controller_loadFromText("data.csv",listaEmpleados);
-                	printf("\nCarga Completada \n");
+                	printf("Carga Completada \n");
                 	flagCarga =1;
                 }
                 else
                 {
-                	 printf("\nYa cargo un archivo previamente!!.\n");
+                	 printf("Ya cargo un archivo previamente!!.\n");
                 }
                 break;
             case 2:
             	if(flagCarga == 0 && controller_loadFromBinary("data.bin",listaEmpleados)!=-1)
             	{
-            		printf("\nCarga Completada \n");
+            		printf("Carga Completada \n");
             		flagCarga =1;
             	}
             	else
             	{
-            		 printf("\nYa cargo un archivo previamente!! \n");
+            		 printf("Ya cargo un archivo previamente!! \n");
             	}
             	break;
             case 3:
             	if(flagCarga == 1 && controller_addEmployee(listaEmpleados)!= -1)
             	{
-            		printf("\nEmpleado cargado correctamente \n");
+            		printf("Empleado cargado correctamente \n");
             	}else
             	{
-            		printf("\nCargue su lista de empleados primero para realizar esta acción.\n");
+            		printf("Cargue su lista de empleados primero para realizar esta acción.\n");
             	}
             	break;
             case 4:
@@ -82,11 +80,11 @@ int main()
             	{
             	if(controller_editEmployee(listaEmpleados)!=-1)
             		{
-            		printf("\nEmpleado Editado Correctamente");
+            		printf("Empleado Editado Correctamente");
             		}
             	}else
             		{
-            		printf("\nCargue su lista de empleados primero para realizar esta acción.\n");
+            		printf("Cargue su lista de empleados primero para realizar esta acción.\n");
             	}
             	break;
             case 5:
@@ -94,21 +92,21 @@ int main()
             	{
             		if(controller_removeEmployee(listaEmpleados)!=-1)
 						{
-							printf("\nEmpleado borrado correctamente");
+							printf("Empleado borrado correctamente");
 						}
             	}
             	else
             	{
-            		printf("\nPor favor cargue su lista de empleados primero para realizar esta acción.\n");
+            		printf("Por favor cargue su lista de empleados primero para realizar esta acción.\n");
             	}
             	break;
             case 6:
             	if(controller_ListEmployee(listaEmpleados)!=-1 && flagCarga == 1)
             	{
-            		printf("\nSe muestra la lista ordenada \n");
+            		printf("Se muestra la lista ordenada \n");
             	}else
             	{
-            		printf("\nError al mostrar la lista, pruebe cargando el archivo \n");
+            		printf("Error al mostrar la lista, pruebe cargando el archivo \n");
             	}
             	break;
 
@@ -118,7 +116,7 @@ int main()
 					controller_sortEmployee(listaEmpleados);
             	}else
             	{
-            		printf("\nCargue su lista de empleados primero para realizar esta acción.\n");
+            		printf("Cargue su lista de empleados primero para realizar esta acción.\n");
             	}
 
             	break;
@@ -128,14 +126,14 @@ int main()
             		if(controller_saveAsText("data.csv", listaEmpleados)!=-1 &&
             		   controller_saveAsBinary("data.bin", listaEmpleados)!=-1)
             		{
-            		printf("\nGuardado Correctamente .\n");
+            		printf("Guardado Correctamente .\n");
 
             		}
             	}
             	else
 
             	{
-            		printf("\nNo se puede guardar si no se cargó el archivo primero!\n");
+            		printf("No se puede guardar si no se cargó el archivo primero!\n");
             	}
 
                 break;
@@ -151,7 +149,7 @@ int main()
             	}else
 
             	{
-            		printf("\nNo se puede guardar si no se cargó el archivo primero!\n");
+            		printf("No se puede guardar si no se cargó el archivo primero!\n");
             	}
             	break;
             case 10:

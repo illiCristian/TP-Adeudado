@@ -107,7 +107,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
 		int idIntMax;
 		if(UltimoId("ArchivoId.txt", idMax)!=-1)
 			{
-			 idIntMax=atoi(idMax);
+			idIntMax=atoi(idMax);
 			}
 
 		Employee*empleadoAux = employee_new();
@@ -133,11 +133,10 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
 						int menu;
 		do
 			{
-				menu = PedirUnEnteroRango("\nQue Dato Desea Modificar?\n"
-										  "1. Nombre\n"
-										  "2. Horas trabajadas\n"
-										  "3. Sueldo\n"
-										  "0. Salir\n", 0, 3);
+				menu = PedirUnEnteroRango("1. nombre\n"
+										  "2. horas trabajadas\n"
+										  "3. sueldo\n"
+										  "0.salir", 0, 3);
 
 			switch (menu)
 				{
@@ -309,7 +308,6 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
 {
 		int retorno = -1;
 		int menu;
-
 		if (pArrayListEmployee != NULL)
 		{
 

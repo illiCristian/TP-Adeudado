@@ -19,17 +19,17 @@ Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajad
 
 			}
 		}
-
-
 	return pEmpleado;
 }
+
+
 
 int employee_setId(Employee* this,int id)
 {
 	int retorno;
 	retorno = -1;
 
-	if(this !=NULL && id > 0)
+	if(this !=NULL && id > 0)// Falta validar que sea entero
 	{
 		this->id =id;
 		retorno = 0;
@@ -160,7 +160,7 @@ void imprimirUnEmpleado(Employee* this)
 		  &&employee_getHorasTrabajadas(this, &horasTrabajadas) !=-1
 		  &&employee_getSueldo(this, &sueldo) !=-1)
 		{
-
+			//printf("%-5d  %-15s  %-5d  %d \n", id, nombre, horasTrabajadas, sueldo);
 		    printf("%d\t%15s\t\t\t%d\t\t%d\n",id,nombre,horasTrabajadas,sueldo);
 		}
 	}
@@ -217,17 +217,17 @@ int UltimoId(char* PATH, char* cadena)
 	return retorno;
 }
 //-----------------------------------------------------------------------------------------------------
-int empleado_CompararPorNombre(void* valor1, void* valor2)
+int empleado_CompararPorNombre(void* valor1, void* valor2) // respeta el prototipo que pide el sort
 {
 	int rtn;
 
 	Employee*e1;
 	Employee*e2;
 
-	e1 = (Employee*) valor1;
+	e1 = (Employee*) valor1; //castea
 	e2 = (Employee*) valor2;
 
-	rtn = strcmp(e1->nombre, e2->nombre);
+	rtn = strcmp(e1->nombre, e2->nombre); //comparo 2 cadenas a-z. el orden lo determina el sort.
 
 	return rtn;
 }
@@ -237,10 +237,10 @@ int empleado_CompararPorId(void* valor1, void* valor2)
 	Employee*e1;
 	Employee*e2;
 
-	e1 = (Employee*) valor1;
+	e1 = (Employee*) valor1; //castea
 	e2 = (Employee*) valor2;
 
-	if (e1->id > e2->id)
+	if (e1->id > e2->id) // ordena numericamente.
 	{
 		retorno = 1;
 	}
@@ -260,10 +260,10 @@ int empleado_CompararPorSueldo(void* valor1, void* valor2)
 	Employee*e1;
 	Employee*e2;
 
-	e1 = (Employee*) valor1;
+	e1 = (Employee*) valor1; //castea
 	e2 = (Employee*) valor2;
 
-	if (e1->sueldo > e2->sueldo)
+	if (e1->sueldo > e2->sueldo) // ordena numericamente.
 	{
 		retorno = 1;
 	}
@@ -283,10 +283,10 @@ int empleado_CompararPorHorasTrabajadas(void* valor1, void* valor2)
 	Employee*e1;
 	Employee*e2;
 
-	e1 = (Employee*) valor1;
+	e1 = (Employee*) valor1; //castea
 	e2 = (Employee*) valor2;
 
-	if (e1->horasTrabajadas > e2->horasTrabajadas)
+	if (e1->horasTrabajadas > e2->horasTrabajadas) // ordena numericamente.
 	{
 		retorno = 1;
 	}

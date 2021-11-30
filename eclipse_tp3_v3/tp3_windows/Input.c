@@ -6,7 +6,7 @@ int MostrarMenu ()
         int opcionIngresada;
 
 
-         printf("\nElija una opcion: \n");
+         printf("\nElija una opcion \n");
          printf("1. Cargar los datos de los empleados desde el archivo data.csv (modo texto). \n");
          printf("2. Cargar los datos de los empleados desde el archivo data.bin (modo binario). \n");
          printf("3. Alta de empleado. \n");
@@ -332,17 +332,15 @@ int MostrarMenuB()
 	int opcion;
 	opcion =-1;
 
-	opcion = PedirUnEnteroRango("------------------------------------------------------\n"
-								"1. -Ordenar por Id de menor a mayor- \n"
-								"2. -Ordenar por Id de mayor a menor- \n"
-								"3. -Ordenar por Nombre a-z- \n"
-								"4. -Ordenar por Nombre z-a- \n"
-								"5. -Ordenar por horas trabajadas menor a mayor- \n"
-								"6. -Ordenar por horas trabajadas mayor a menor- \n"
-								"7. -Ordenar por sueldo menor a mayor-  \n"
-								"8. -Ordenar por sueldo mayor a menor-  \n"
-								"0.salir\n"
-								"------------------------------------------------------\n", 0, 8);
+	opcion = PedirUnEnteroRango("1. ordenarId menor a mayor \n"
+								"2. ordenarId mayor a menor\n"
+								"3. ordenar por Nombre a-z\n"
+								"4. ordenar por Nombre z-a\n"
+								"5. ordenar por horas trabajadas menor a mayor\n"
+								"6. ordenar por horas trabajadas mayor a menor\n"
+								"7. ordenar por sueldo  menor a mayor  \n"
+								"8. ordenar por sueldo mayor a menor \n"
+								"0.salir", 0, 8);
 	return opcion;
 }
 
